@@ -32,7 +32,7 @@ export class HomePage {
     let MP = this.maxPoints;
     let PT = Math.sqrt(((0.7*TT*TT)/((this.points/MP)-0.3)-TT*TT)/10.0);
 
-    if (PT.toString() == "NaN") {
+    if (PT.toString() == "NaN" || PT > TT) {
       this.codingTime = "";
     }
     else {
