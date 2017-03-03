@@ -6,7 +6,28 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <h3>Calculate score from time</h3>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Coding Time</ion-label>
+      <ion-input type="text" placeholder="Enter Coding Time (hh:mm:ss)" [(ngModel)]="codingTime" (blur)="calculate()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Max</ion-label>
+      <ion-input type="number" placeholder="Maximum Possible Points" [(ngModel)]="maxPoints" (blur)="calculate()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Duration</ion-label>
+      <ion-input type="number" placeholder="Contest Duration (Minutes)" [(ngModel)]="duration" (blur)="calculate()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Points</ion-label>
+      <ion-input type="number" placeholder="" [(ngModel)]=points></ion-input>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
