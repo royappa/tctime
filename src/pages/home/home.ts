@@ -28,20 +28,22 @@ export class HomePage {
   ** PT = sqrt(((0.7*TT^2)/((points/MP)-0.3)-TT^2)/10.0)
    */
   calculate() {
+    this.codingTime = "";
+    if (!this.points || !this.maxPoints || !this.duration) {
+      return;
+    }
     let TT = this.duration*60;
     let MP = this.maxPoints;
     let PT = Math.sqrt(((0.7*TT*TT)/((this.points/MP)-0.3)-TT*TT)/10.0);
 
     if (PT.toString() == "NaN" || PT > TT) {
-      this.codingTime = "";
+      return;
     }
-    else {
-      // need to figure out how to use a nice date library in Angular/Typescript, like moment.js
-      let hours = Math.floor(PT/3600);
-      let seconds = PT%3600; // even though seconds may not be an integer
-      let minutes = Math.floor(seconds/60);
-      seconds %= 60;
-      this.codingTime = sprintf("%02d:%02d:%06.3f", hours, minutes, seconds);
-    }
+
+    let hours = Math.floor(PT/3600);
+    let seconds = PT-hours*3600;
+    let minutes = Math.floor(seconds/60);
+    seconds -= minutes*60;
+    this.codingTime = sprintf("%02d:%02d:%06.3f", hours, minutes, seconds);
   }
 }

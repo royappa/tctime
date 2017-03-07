@@ -20,20 +20,28 @@ export class CalcScorePage {
   calculate() {
 
     this.points = "";
+    if (!this.codingTime) {
+      return;
+    }
+
     let hms = this.codingTime.split(":");
     if (hms.length !== 3) {
-      return;
+      hms = this.codingTime.split(" ");
+      if (hms.length !== 3) {
+        return;
+      }
     }
     let hours = parseInt(hms[0]);
     let minutes = parseInt(hms[1]);
     let seconds = parseFloat(hms[2]);
-    if (hours < 0 || hours > 6 || minutes < 0 || minutes >= 60 || seconds < 0 || seconds >= 60) {
+    if (hours < 0 || hours > 24 || minutes < 0 || minutes >= 60 || seconds < 0 || seconds >= 60) {
       return;
     }
-    if (this.duration == undefined || this.duration.toString() == "" || this.duration == 0 ||
-        this.maxPoints == undefined || this.maxPoints.toString() == "" || this.maxPoints == 0) {
+    if (!this.duration || this.duration.toString() == "" || this.duration == 0 ||
+        !this.maxPoints || this.maxPoints.toString() == "" || this.maxPoints == 0) {
       return;
     }
+
     let PT = hours*3600+minutes*60+seconds;
     let TT = this.duration*60;
 

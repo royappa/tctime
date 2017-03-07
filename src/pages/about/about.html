@@ -1,24 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About Topcoder Time
+      About TcTime
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-TcTime provides these features related to Topcoder algorithm programming contests:
+TcTime provides these features related to Topcoder.com algorithm programming contests:
   <ul>
-    <li>Given the points scored on a problem, find out how much time it took.</li>
-    <li>Given the time scored on a problem, find out how many points it will score.</li>
+    <li>Given the points awarded for solving a problem, show how much time the coder took to solve it.</li>
+    <li>Given the time taken to submit a problem, show how many points it will score.</li>
   </ul>
 
-  <p>
-  The app only counts the first submission. If you resubmit a problem, a penalty is applied and that is not simulated here.
-  </p>
-  <p>
-  This link to Quora.com has both the scoring formula and a nice discussion:
-  </p>
-  <a href="https://www.quora.com/How-does-TopCoder-points-system-work">https://www.quora.com/How-does-TopCoder-points-system-work</a>
+  The calculated information assumes that the problem's <i>first</i> submission is correct.<br>
+    Resubmitted problems incur penalties, which are not calculated here.
 
+  For full details, see the <a href="https://community.topcoder.com/tc?module=Static&d1=help&d2=ratedEvent#score">Topcoder scoring formula</a>.
+
+  Developed using:
+
+  <ul>
+    <li>Ionic 2: <a href="http://ionicframework.com/">ionicframework.com</a></li>
+    <li>AngularJS: <a href="https://angular.io/">angular.io</a></li>
+    <li>Firebase: <a href="https://firebase.google.com/">firebase.google.com</a></li>
+  </ul>
+
+  <i>All information is provided without any warranty. Use at your own risk.<br>
+    All product, logo and trademark names appearing here belong to their respective owners.
+  </i>
 </ion-content>

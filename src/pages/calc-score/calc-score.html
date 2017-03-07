@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Calculate Score</ion-title>
+    <ion-title>Topcoder Score from Time</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,22 +11,22 @@
 
     <ion-item>
       <ion-label color="primary" fixed>Coding Time</ion-label>
-      <ion-input type="text" placeholder="Enter Coding Time (hh:mm:ss)" [(ngModel)]="codingTime" (blur)="calculate()"></ion-input>
+      <ion-input type="text" placeholder="h:m:s (can omit colon)" [(ngModel)]="codingTime" (blur)="calculate()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" fixed>Max</ion-label>
-      <ion-input type="number" placeholder="Maximum Possible Points" [(ngModel)]="maxPoints" (blur)="calculate()"></ion-input>
+      <ion-input type="number" placeholder="Max Possible Points" [(ngModel)]="maxPoints" (blur)="calculate()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" fixed>Duration</ion-label>
-      <ion-input type="number" placeholder="Contest Duration (Minutes)" [(ngModel)]="duration" (blur)="calculate()"></ion-input>
+      <ion-input type="number" placeholder="Contest Duration (Mins)" [(ngModel)]="duration" (blur)="calculate()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" fixed>Points</ion-label>
-      <ion-input type="number" placeholder="" [(ngModel)]=points></ion-input>
+      <ion-input type="number" [disabled]="true" placeholder="" [(ngModel)]=points></ion-input>
     </ion-item>
 
   </ion-list>
